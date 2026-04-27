@@ -25,11 +25,11 @@ export default function TimelineItem({
         )}
         <p className="text-on-surface-variant leading-relaxed">{description}</p>
       </div>
-      <div className="md:col-span-4 flex items-center md:justify-end gap-3 flex-wrap">
+      <div className="md:col-span-4 flex items-start content-start md:justify-end gap-2 flex-wrap">
         {tags.map((tag) => (
           <span
             key={tag}
-            className="font-label text-xs text-primary border border-primary/30 px-3 py-1 rounded uppercase tracking-wider"
+            className="font-label text-[10px] text-primary border border-primary/25 bg-primary/5 px-2.5 py-1 rounded uppercase tracking-wide whitespace-nowrap"
           >
             {tag}
           </span>

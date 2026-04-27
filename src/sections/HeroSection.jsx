@@ -29,14 +29,14 @@ export default function HeroSection() {
             <span className="text-primary italic">BACKEND SYSTEMS</span>
           </h1>
           <p className="text-on-surface-variant text-lg md:text-xl max-w-xl mb-12 font-light leading-relaxed">
-            Building robust backend architectures with .NET and Java. Passionate about scalable system design, cloud infrastructure, and cutting-edge technologies.
+            Interested in building robust backend architectures with .NET and Java. Passionate about scalable system design, cloud infrastructure, and cutting-edge technologies.
           </p>
           <div className="flex flex-wrap gap-6">
             <a
               href="#projects"
               className="group relative px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-bold rounded-md flex items-center gap-3 transition-transform hover:scale-[1.02] active:scale-95 shadow-[0_0_20px_rgba(129,236,255,0.3)]"
             >
-              Explore Work
+              Projects
               <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
                 arrow_forward
               </span>

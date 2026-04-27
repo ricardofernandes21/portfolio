@@ -40,11 +40,13 @@ export default function ProjectCard({
         {caseStudyLink && (
           <a
             href={caseStudyLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center font-label text-[10px] font-bold tracking-widest uppercase text-primary-dim hover:text-primary transition-colors"
           >
-            {colSpan.includes('8') ? 'Case Study' : 'View Research'}
+            View Project
             <span className="material-symbols-outlined text-sm ml-1">
-              {colSpan.includes('8') ? 'arrow_forward' : 'description'}
+              {'description'}
             </span>
           </a>
         )}

@@ -1,13 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function ContactSection() {
+  const formspreeEndpoint ='https://formspree.io/f/mzdylbkg'
+  const submissionCooldownSeconds = 3
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
+    website: '',
   })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+  const [cooldownSeconds, setCooldownSeconds] = useState(0)
+
+  useEffect(() => {
+    if (cooldownSeconds <= 0) return undefined
+
+    const intervalId = setInterval(() => {
+      setCooldownSeconds((prev) => Math.max(prev - 1, 0))
+    }, 1000)
+
+    return () => clearInterval(intervalId)
+  }, [cooldownSeconds])
 
   const validateForm = () => {
     const newErrors = {}
@@ -28,17 +45,69 @@ export default function ContactSection() {
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }))
     }
+
+    if (submitError) {
+      setSubmitError('')
+    }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (cooldownSeconds > 0) {
+      setSubmitError(`Please wait ${cooldownSeconds}s before sending another message.`)
+      return
+    }
+
     const newErrors = validateForm()
 
     if (Object.keys(newErrors).length === 0) {
-      setSubmitted(true)
-      setFormData({ name: '', email: '', message: '' })
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000)
+      if (!formspreeEndpoint) {
+        setSubmitError('Formspree is not configured. Add VITE_FORMSPREE_FORM_ID to your .env file.')
+        return
+      }
+
+      // Honeypot trap: if a bot fills this hidden field, do not submit to Formspree.
+      if (formData.website.trim()) {
+        setSubmitted(true)
+        setFormData({ name: '', email: '', message: '', website: '' })
+        setCooldownSeconds(submissionCooldownSeconds)
+        setTimeout(() => setSubmitted(false), 5000)
+        return
+      }
+
+      setIsSubmitting(true)
+      setSubmitError('')
+
+      try {
+        const response = await fetch(formspreeEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _gotcha: formData.website,
+          }),
+        })
+
+        if (!response.ok) {
+          throw new Error('Unable to send your message right now. Please try again.')
+        }
+
+        setSubmitted(true)
+        setFormData({ name: '', email: '', message: '', website: '' })
+        setCooldownSeconds(submissionCooldownSeconds)
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitted(false), 5000)
+      } catch (error) {
+        setSubmitError(error.message)
+      } finally {
+        setIsSubmitting(false)
+      }
     } else {
       setErrors(newErrors)
     }
@@ -50,11 +119,11 @@ export default function ContactSection() {
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h2 className="font-headline text-5xl md:text-7xl font-bold mb-8 tracking-tighter uppercase">
           LET'S BUILD THE <br />
-          <span className="text-primary italic">FUTURE_CORE</span>
+          <span className="text-primary italic">FUTURE_TOGETHER</span>
         </h2>
         <p className="text-on-surface-variant text-lg mb-12 max-w-xl mx-auto">
-          Available for senior engineering roles or high-impact backend collaborations. Let's discuss your next
-          architectural challenge.
+          Open to junior software engineering opportunities focused on backend development, .NET, and cloud delivery.
+          Let&apos;s discuss how I can help build reliable, high-impact systems.
         </p>
 
         {submitted ? (
@@ -67,6 +136,19 @@ export default function ContactSection() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6 mb-8">
+            <div className="hidden" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                id="website"
+                type="text"
+                name="website"
+                autoComplete="off"
+                tabIndex={-1}
+                value={formData.website}
+                onChange={handleChange}
+              />
+            </div>
+
             <div>
               <input
                 type="text"
@@ -105,37 +187,15 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold rounded-md hover:shadow-[0_0_30px_rgba(129,236,255,0.4)] transition-all active:scale-95"
+              disabled={isSubmitting || cooldownSeconds > 0}
+              className="w-full px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold rounded-md hover:shadow-[0_0_30px_rgba(129,236,255,0.4)] transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : cooldownSeconds > 0 ? `Wait ${cooldownSeconds}s` : 'Send Message'}
             </button>
+
+            {submitError && <p className="text-error text-sm">{submitError}</p>}
           </form>
         )}
-
-        <div className="flex justify-center gap-8">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-label text-xs uppercase tracking-widest text-gray-500 hover:text-primary transition-colors"
-          >
-            GITHUB
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-label text-xs uppercase tracking-widest text-gray-500 hover:text-primary transition-colors"
-          >
-            LINKEDIN
-          </a>
-          <a
-            href="mailto:your.email@example.com"
-            className="font-label text-xs uppercase tracking-widest text-gray-500 hover:text-primary transition-colors"
-          >
-            EMAIL
-          </a>
-        </div>
       </div>
     </section>
   )
