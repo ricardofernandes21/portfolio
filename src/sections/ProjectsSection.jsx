@@ -31,15 +31,16 @@ export default function ProjectsSection() {
     },
     {
       id: 3,
-      title: 'New Project Coming Soon',
+      title: 'TaskIt - Task Management CLI',
       description:
-        'Coming Soon',      image:
-        'https://placehold.co/600x400?text=Coming+Soon',
-      tags: ['.NET', 'C#','SQL','Entity Framework'],
+        'A command-line interface (CLI) tool for managing tasks, built with .NET and C#. Features include task creation, listing,  and time tracking.',
+      image:
+        'https://images.unsplash.com/photo-1762242298589-582f5f6c3fb1?w=1400&h=700&q=85&fit=crop',
+      tags: ['.NET', 'C#', 'JSON', 'Spectre.Console'],
       colSpan: 'md:col-span-4',
       rowSpan: '',
       aspectRatio: 'aspect-square',
-      caseStudyLink: '#',
+      caseStudyLink: 'https://github.com/ricardofernandes21/Taskit',
     },
     {
       id: 4,
