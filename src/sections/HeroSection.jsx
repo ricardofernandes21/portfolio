@@ -79,7 +79,7 @@ export default function HeroSection() {
               <img
                 alt="Ricardo Fernandes"
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
-                src="public/foto.jpg"
+                src="foto.jpg"
               />
             </div>
           </div>
