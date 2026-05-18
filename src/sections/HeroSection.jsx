@@ -79,8 +79,8 @@ export default function HeroSection() {
               <img
                 alt="Ricardo Fernandes"
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
-                src="https://media.licdn.com/dms/image/v2/D4E03AQFQ48_Fkw2_xg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1690142844725?e=1778716800&v=beta&t=0BAgaK1K5mYA_yN0hKPc8yBMjuWsH0LSlo05elo33oc"
-                />
+                src="public/foto.jpg"
+              />
             </div>
           </div>
         </div>
