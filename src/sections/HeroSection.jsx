@@ -29,7 +29,7 @@ export default function HeroSection() {
             <span className="text-primary italic">BACKEND SYSTEMS</span>
           </h1>
           <p className="text-on-surface-variant text-lg md:text-xl max-w-xl mb-12 font-light leading-relaxed">
-            Interested in building robust backend architectures with .NET and Java. Passionate about scalable system design, cloud infrastructure, and cutting-edge technologies.
+            Specializing in scalable backend systems with .NET and Java, integrating AI into development workflows and solution design.
           </p>
           <div className="flex flex-wrap gap-6">
             <a
@@ -63,15 +63,15 @@ export default function HeroSection() {
             </div>
             <div className="absolute bottom-1/4 -left-4 glass-card p-4 rounded-xl border border-outline-variant/10 flex items-center gap-3 shadow-xl">
               <span className="w-3 h-3 bg-secondary rounded-full"></span>
-              <span className="font-label text-sm font-bold uppercase tracking-wider">Docker</span>
+              <span className="font-label text-sm font-bold uppercase tracking-wider">SQL</span>
             </div>
             <div className="absolute top-1/3 -right-10 glass-card p-4 rounded-xl border border-outline-variant/10 flex items-center gap-3 shadow-xl">
               <span className="w-3 h-3 bg-secondary rounded-full"></span>
-              <span className="font-label text-sm font-bold uppercase tracking-wider">SQL</span>
+              <span className="font-label text-sm font-bold uppercase tracking-wider">CI/CD</span>
             </div>
             <div className="absolute bottom-0 right-1/4 glass-card p-4 rounded-xl border border-outline-variant/10 flex items-center gap-3 shadow-xl">
               <span className="w-3 h-3 bg-secondary rounded-full"></span>
-              <span className="font-label text-sm font-bold uppercase tracking-wider">Azure CI/CD</span>
+              <span className="font-label text-sm font-bold uppercase tracking-wider">Artificial Inteligence</span>
             </div>
 
             {/* Central Profile Image */}
