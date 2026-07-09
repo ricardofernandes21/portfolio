@@ -55,6 +55,19 @@ export default function ProjectsSection() {
       aspectRatio: 'aspect-video',
       caseStudyLink: 'https://github.com/ricardofernandes21/GamesDirectory',
     },
+    {
+      id: 5,
+      title: 'Markethub - Example Project',
+      description:
+        'Microservices based e-commerce backend system example.',
+      image:
+        'markethub.jpg',
+      tags: ['.NET', 'C#', 'PostgreSQL', 'Docker', 'Swagger', 'Entity Framework', 'Unit Testing', 'RabbitMQ'],
+      colSpan: 'md:col-span-12',
+      rowSpan: '',
+      aspectRatio: 'aspect-video',
+      caseStudyLink: 'https://github.com/ricardofernandes21/markethubexample',
+    },
   ]
 
   return (
