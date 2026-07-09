@@ -1,17 +1,22 @@
 import React from 'react'
 
-export default function ProjectCard({ 
-  image, 
-  title, 
-  description, 
-  tags, 
-  caseStudyLink, 
+export default function ProjectCard({
+  image,
+  title,
+  description,
+  tags,
+  caseStudyLink,
   colSpan = 'md:col-span-4',
   rowSpan = '',
-  aspectRatio = 'aspect-square' 
+  aspectRatio = 'aspect-square'
 }) {
   return (
-    <article className={`${colSpan} ${rowSpan} bg-surface-container rounded-xl overflow-hidden group flex flex-col`}>
+    <a
+      href={caseStudyLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${colSpan} ${rowSpan} bg-surface-container rounded-xl overflow-hidden group flex flex-col cursor-pointer`}
+    >
       <div className={`${aspectRatio} overflow-hidden`}>
         <img
           alt={title}
@@ -38,19 +43,14 @@ export default function ProjectCard({
           {description}
         </p>
         {caseStudyLink && (
-          <a
-            href={caseStudyLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center font-label text-[10px] font-bold tracking-widest uppercase text-primary-dim hover:text-primary transition-colors"
-          >
+          <span className="flex items-center font-label text-[10px] font-bold tracking-widest uppercase text-primary-dim group-hover:text-primary transition-colors">
             View Project
             <span className="material-symbols-outlined text-sm ml-1">
               {'description'}
             </span>
-          </a>
+          </span>
         )}
       </div>
-    </article>
+    </a>
   )
 }

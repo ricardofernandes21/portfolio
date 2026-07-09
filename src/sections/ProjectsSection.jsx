@@ -5,29 +5,29 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: 1,
+      title: 'Markethub - Example Project',
+      description:
+        'A portfolio project demonstrating a backend marketplace integration platform built with .NET 10. It syncs product data to marketplace channels (Amazon) using event-driven messaging, exposes a REST API, and ships with CI and a React management dashboard.',
+      image:
+        'markethub.jpg',
+      tags: ['.NET', 'C#', 'PostgreSQL', 'Docker', 'Swagger', 'Entity Framework', 'Unit Testing', 'RabbitMQ'],
+      colSpan: 'md:col-span-8',
+      rowSpan: '',
+      aspectRatio: 'aspect-video',
+      caseStudyLink: 'https://github.com/ricardofernandes21/markethubexample',
+    },
+    {
+      id: 2,
       title: 'Web application for content migration',
       description:
         'A specialized data extraction and migration engine built in .NET to automate the transfer of content and media, significantly reducing manual effort and ensuring data integrity during the migration process.',
       image:
         'http://images.ctfassets.net/5ghvb2a59mwf/nZcn3m7mFQWj36V5j9qix/389a2999238169cbf2dc881188698fae/1.png?w=1400&h=700&q=90&fm=webp',
       tags: ['.NET', 'C#', 'Umbraco', 'SQL'],
-      colSpan: 'md:col-span-8',
-      rowSpan: '',
-      aspectRatio: 'aspect-video',
-      caseStudyLink: 'https://kruso.dk/en/cases/danmarks-frie-forskningsfond',
-    },
-    {
-      id: 2,
-      title: 'Car Damage Detection',
-      description:
-        "Bachelor's project focusing on a machine learning model designed for car damage detection and assessment.",
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuBKiluNUZrwFbnsz4RnRq-u1bepl6qxA_oL3580Z4dapvPfANJ1b8xnp_UUgid0eaUHHgBYQ57WofO4MlV9j5a7jNyte2EqUhTMm--13bpkNCWNkenYz4PbZ23J5JrT2_r8cOSi5qGemc-eRit9lspZEAcoAt2WAi9IBUk72gFqpbQji8Pzi0kZtYieYR1PIx4T6Zt_c6UWwELZp_CY6PV4udFZYAYjOVB-2HmO8WWP-nfNOjQ5gUYA7JuyQn6R_3MCzfdS7I-DbkQ',
-      tags: ['Python', 'ML'],
       colSpan: 'md:col-span-4',
       rowSpan: '',
-      aspectRatio: 'aspect-square',
-      caseStudyLink: 'https://github.com/orgs/BACHELOR-NRD/repositories',
+      aspectRatio: 'aspect-video',
+      caseStudyLink: 'https://www.kruso.group/da-DK/cases/independent-research-fund-denmark',
     },
     {
       id: 3,
@@ -57,16 +57,16 @@ export default function ProjectsSection() {
     },
     {
       id: 5,
-      title: 'Markethub - Example Project',
+      title: 'Car Damage Detection',
       description:
-        'A portfolio project demonstrating a backend marketplace integration platform built with .NET 10. It syncs product data to marketplace channels (Amazon) using event-driven messaging, exposes a REST API, and ships with CI and a React management dashboard.',
+        "Bachelor's project focusing on a machine learning model designed for car damage detection and assessment.",
       image:
-        'markethub.jpg',
-      tags: ['.NET', 'C#', 'PostgreSQL', 'Docker', 'Swagger', 'Entity Framework', 'Unit Testing', 'RabbitMQ'],
-      colSpan: 'md:col-span-12',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuBKiluNUZrwFbnsz4RnRq-u1bepl6qxA_oL3580Z4dapvPfANJ1b8xnp_UUgid0eaUHHgBYQ57WofO4MlV9j5a7jNyte2EqUhTMm--13bpkNCWNkenYz4PbZ23J5JrT2_r8cOSi5qGemc-eRit9lspZEAcoAt2WAi9IBUk72gFqpbQji8Pzi0kZtYieYR1PIx4T6Zt_c6UWwELZp_CY6PV4udFZYAYjOVB-2HmO8WWP-nfNOjQ5gUYA7JuyQn6R_3MCzfdS7I-DbkQ',
+      tags: ['Python', 'ML'],
+      colSpan: 'md:col-span-4',
       rowSpan: '',
-      aspectRatio: 'aspect-video',
-      caseStudyLink: 'https://github.com/ricardofernandes21/markethubexample',
+      aspectRatio: 'aspect-square',
+      caseStudyLink: 'https://github.com/orgs/BACHELOR-NRD/repositories',
     },
   ]
 
