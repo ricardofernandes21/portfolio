@@ -59,7 +59,7 @@ export default function ProjectsSection() {
       id: 5,
       title: 'Markethub - Example Project',
       description:
-        'Microservices based e-commerce backend system example.',
+        'A portfolio project demonstrating a backend marketplace integration platform built with .NET 10. It syncs product data to marketplace channels (Amazon) using event-driven messaging, exposes a REST API, and ships with CI and a React management dashboard.',
       image:
         'markethub.jpg',
       tags: ['.NET', 'C#', 'PostgreSQL', 'Docker', 'Swagger', 'Entity Framework', 'Unit Testing', 'RabbitMQ'],
