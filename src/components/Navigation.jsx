@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Navigation({ activeTab, onTabChange }) {
+export default function Navigation({ activeTab, onTabChange, theme, onToggleTheme }) {
   const tabs = [
     { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Skills' },
@@ -8,11 +8,11 @@ export default function Navigation({ activeTab, onTabChange }) {
   ]
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass-nav shadow-[0_0_40px_rgba(129,236,255,0.06)]">
+    <nav className="fixed top-0 w-full z-50 glass-nav shadow-[0_0_40px] shadow-primary/[0.06]">
       <div className="flex justify-between items-center px-8 h-20 max-w-7xl mx-auto font-['Space_Grotesk'] tracking-tight">
         <button
           onClick={() => onTabChange('home')}
-          className="text-2xl font-bold tracking-tighter text-[#81ecff] hover:opacity-90 transition-opacity"
+          className="text-2xl font-bold tracking-tighter text-primary hover:opacity-90 transition-opacity"
         >
           RICARDO_FERNANDES
         </button>
@@ -23,8 +23,8 @@ export default function Navigation({ activeTab, onTabChange }) {
               onClick={() => onTabChange(tab.id)}
               className={`font-medium transition-colors duration-300 ${
                 activeTab === tab.id
-                  ? 'text-[#81ecff] border-b-2 border-[#81ecff] pb-1'
-                  : 'text-gray-400 hover:text-[#81ecff]'
+                  ? 'text-primary border-b-2 border-primary pb-1'
+                  : 'text-on-surface-variant hover:text-primary'
               }`}
             >
               {tab.label}
@@ -32,6 +32,15 @@ export default function Navigation({ activeTab, onTabChange }) {
           ))}
         </div>
 
+        <button
+          onClick={onToggleTheme}
+          aria-label="Toggle theme"
+          className="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors"
+        >
+          <span className="material-symbols-outlined">
+            {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+          </span>
+        </button>
       </div>
     </nav>
   )

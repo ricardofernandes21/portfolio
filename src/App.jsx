@@ -5,9 +5,11 @@ import HeroSection from './sections/HeroSection'
 import ProjectsSection from './sections/ProjectsSection'
 import ExperienceSection from './sections/ExperienceSection'
 import ContactSection from './sections/ContactSection'
+import useTheme from './hooks/useTheme'
 
 function App() {
   const [activeTab, setActiveTab] = useState('home')
+  const { theme, toggleTheme } = useTheme()
 
   const handleTabChange = (tabId) => {
     setActiveTab(tabId)
@@ -28,6 +30,8 @@ function App() {
       <Navigation
         activeTab={activeTab}
         onTabChange={handleTabChange}
+        theme={theme}
+        onToggleTheme={toggleTheme}
       />
       <main>
         <HeroSection />

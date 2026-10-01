@@ -10,7 +10,7 @@ export default function HeroSection() {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-20"
           style={{
-            backgroundImage: 'radial-gradient(#484847 0.5px, transparent 0.5px)',
+            backgroundImage: 'radial-gradient(rgb(var(--color-outline-variant)) 0.5px, transparent 0.5px)',
             backgroundSize: '40px 40px',
           }}
         ></div>
@@ -34,7 +34,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap gap-6">
             <a
               href="#projects"
-              className="group relative px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-bold rounded-md flex items-center gap-3 transition-transform hover:scale-[1.02] active:scale-95 shadow-[0_0_20px_rgba(129,236,255,0.3)]"
+              className="group relative px-8 py-4 bg-gradient-to-br from-primary-fixed to-primary-fixed-dim text-on-primary-fixed font-bold rounded-md flex items-center gap-3 transition-transform hover:scale-[1.02] active:scale-95 shadow-[0_0_20px] shadow-primary/30"
             >
               Projects
               <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">

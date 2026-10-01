@@ -188,7 +188,7 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={isSubmitting || cooldownSeconds > 0}
-              className="w-full px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold rounded-md hover:shadow-[0_0_30px_rgba(129,236,255,0.4)] transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full px-8 py-4 bg-gradient-to-r from-primary-fixed to-primary-fixed-dim text-on-primary-fixed font-bold rounded-md hover:shadow-[0_0_30px] hover:shadow-primary/40 transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {isSubmitting ? 'Sending...' : cooldownSeconds > 0 ? `Wait ${cooldownSeconds}s` : 'Send Message'}
             </button>
