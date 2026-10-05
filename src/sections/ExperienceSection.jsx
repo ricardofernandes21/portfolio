@@ -6,12 +6,12 @@ export default function ExperienceSection() {
     {
       id: 1,
       year: '2025',
-      endDate: 'Present',
+      endDate: 'JAN 2025 - MAI 2026',
       title: 'Junior Software Engineer',
       company: 'Kruso A/S',
       description:
         'Built and optimized .NET solutions for enterprise CMS environments, specializing in data migration and systems integration. Created and improved custom NuGet packages, and migrated hosting from Windows to Linux.',
-      tags: ['.NET', 'Umbraco', 'C#','Linux','SQL','Git'],
+      tags: ['.NET', 'Umbraco', 'C#', 'Linux', 'SQL', 'Git'],
     },
     {
       id: 2,
@@ -41,7 +41,7 @@ export default function ExperienceSection() {
       company: 'Via University College',
       description:
         'Built a strong software engineering foundation through coursework and projects in backend development, data structures, distributed systems, and software architecture, while applying .NET, Java, SQL, and DevOps practices in a project based learning environment.',
-      tags: ['.NET', 'Java', 'Systems Design', 'Data Structures', 'Distributed Systems','Spring Boot','DevOps','Docker','Git','Relational Databases','SQL','Design Patterns','Web Development','Azure','CI/CD','Agile Methodologies','Testing'],
+      tags: ['.NET', 'Java', 'Systems Design', 'Data Structures', 'Distributed Systems', 'Spring Boot', 'DevOps', 'Docker', 'Git', 'Relational Databases', 'SQL', 'Design Patterns', 'Web Development', 'Azure', 'CI/CD', 'Agile Methodologies', 'Testing'],
     },
   ]
 
@@ -49,7 +49,7 @@ export default function ExperienceSection() {
     <section className="py-18 px-8" id="experience">
       <div className="max-w-7xl mx-auto">
         <h2 className="font-headline text-6xl md:text-8xl font-bold tracking-tighter uppercase mb-20">
-           <span className="text-secondary">Skills</span>
+          <span className="text-secondary">Skills</span>
         </h2>
 
         {/* Tech Stack Grid */}
@@ -65,7 +65,7 @@ export default function ExperienceSection() {
               and Azure for modern deployment pipelines.
             </p>
             <div className="flex flex-wrap gap-3">
-              {['.NET', 'Java Spring Boot', 'Azure','Docker','Git','CI/CD','SQL'].map((tech) => (
+              {['.NET', 'Java Spring Boot', 'Azure', 'Docker', 'Git', 'CI/CD', 'SQL'].map((tech) => (
                 <div key={tech} className="px-4 py-2 bg-surface-container-highest rounded-md flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
                   <span className="font-label text-xs uppercase tracking-wider">{tech}</span>
@@ -149,7 +149,7 @@ export default function ExperienceSection() {
               Collaboration-focused mindset with strong ownership, communication, and problem-solving in team environments.
             </p>
             <div className="flex flex-wrap gap-2">
-              {['Problem Solving', 'Teamwork', 'Attention to detail', 'Time Management', 'Communication','Adaptability','Creativity'].map((skill) => (
+              {['Problem Solving', 'Teamwork', 'Attention to detail', 'Time Management', 'Communication', 'Adaptability', 'Creativity'].map((skill) => (
                 <span key={skill} className="px-2 py-1 bg-surface-container-highest text-[10px] font-bold uppercase rounded">
                   {skill}
                 </span>
